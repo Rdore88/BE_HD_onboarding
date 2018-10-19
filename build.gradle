@@ -27,5 +27,8 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'com.google.apis:google-api-services-spanner:v1-rev44-1.25.0'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:+'
+    compile 'com.google.cloud:google-cloud:+'
     compileOnly 'org.projectlombok:lombok:1.18.2'
 }
