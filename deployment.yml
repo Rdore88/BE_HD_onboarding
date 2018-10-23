@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: java-admin-portal
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: java-admin-portal
+    spec:
+      containers:
+      - name: java-admin-portal
+        image: gcr.io/admin-portal-219814/java-admin-portal:v1.0.20
+        imagePullPolicy: Always
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: java-admin-portal-load-balancer
+spec:
+  selector:
+    app: java-admin-portal
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 151.140.0.0/16
+  - 165.130.0.0/16
+  - 207.11.0.0/17
+  - 50.207.28.8/29
+  - 98.6.11.8/29

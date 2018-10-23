@@ -1,8 +1,18 @@
 package portal.User;
 
+import com.google.api.client.util.Lists;
+import com.google.api.gax.paging.Page;
+import com.google.api.services.storage.model.Bucket;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spanner.*;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 import javax.swing.plaf.nimbus.State;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -16,11 +26,14 @@ public class userDatabase {
 //        this.dbClient = dbClient;
     }
 
+
     private static DatabaseClient getDbClient() {
-        SpannerOptions options = SpannerOptions.newBuilder().build();
+        SpannerOptions options = SpannerOptions.newBuilder().setProjectId("admin-portal-219814").build();
         Spanner spanner = options.getService();
-        DatabaseId db = DatabaseId.of(options.getProjectId(), "admin-portal-instance", "admins" );
+        DatabaseId db = DatabaseId.of("admin-portal-219814", "admin-portal-instance", "admins" );
+        System.out.println(options.getProjectId());
         DatabaseClient dbClient = spanner.getDatabaseClient(db);
+        System.out.println(dbClient);
         return dbClient;
     }
 
