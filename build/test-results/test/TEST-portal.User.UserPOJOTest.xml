@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="portal.User.UserPOJOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-25T12:58:11" hostname="C02WD3BDHTD6MBP" time="0.005">
+  <properties/>
+  <testcase name="shouldConstruct" classname="portal.User.UserPOJOTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

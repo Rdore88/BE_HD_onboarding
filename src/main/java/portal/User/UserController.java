@@ -1,7 +1,6 @@
 package portal.User;
 
 import org.jboss.logging.Param;
-import org.junit.runners.Parameterized;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
